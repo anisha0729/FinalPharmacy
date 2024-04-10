@@ -1,0 +1,54 @@
+﻿/* CSS styles for the customer page */
+
+/* Navbar styles */
+.navbar {
+    background-color: #ffeaa7; /* Set navbar background color to a light yellow */
+}
+
+.navbar-toggler-icon {
+    color: #000000; /* Set color of the navbar toggler icon to black */
+}
+
+/* Footer styles */
+footer {
+    background-color: #fdcb6e; /* Set footer background color to a darker yellow */
+    padding: 20px 0; /* Add padding to the footer */
+}
+
+footer p {
+    margin-bottom: 10px; /* Add margin to the paragraph inside footer */
+}
+
+footer nav ul {
+    list-style-type: none; /* Remove default list style */
+    margin: 0; /* Remove default margin */
+    padding: 0; /* Remove default padding */
+}
+
+footer nav ul li {
+    display: inline-block; /* Display list items horizontally */
+    margin-right: 15px; /* Add margin between list items */
+}
+
+footer nav ul li a {
+    color: #000000; /* Set link color to black */
+    text-decoration: none; /* Remove default underline */
+}
+
+footer nav ul li a:hover {
+    text-decoration: underline; /* Add underline on hover */
+}
+
+/* Social media icons */
+.social-media {
+    margin-top: 10px; /* Add margin to the social media icons */
+}
+
+.social-icon {
+    color: #000000; /* Set social media icon color to black */
+    margin-right: 10px; /* Add margin between social media icons */
+}
+
+.social-icon:hover {
+    color: #007bff; /* Change color on hover */
+}

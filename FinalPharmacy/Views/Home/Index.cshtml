@@ -1,0 +1,19 @@
+﻿@{
+    ViewData["Title"] = "Home Page";
+}
+@* <header>
+<partial name="_LoginPartial" />
+</header> *@
+<head>
+    <link rel="stylesheet" href="~/css/site.css" />
+</head>
+
+<div class="text-center">
+    <h1 class="display-4 mb-4">Welcome</h1>
+    <h2 class="h4 mb-4">Are you a Customer or Staff?</h2>
+    <div class="btn-group" role="group">
+        <a asp-controller="Account" asp-action="Customer" class="btn btn-customer mr-2">Customer</a>
+        <a asp-controller="Account" asp-action="Staff" class="btn btn-staff">Staff</a>
+    </div>
+</div>
+

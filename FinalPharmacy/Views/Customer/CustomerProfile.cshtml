@@ -1,0 +1,38 @@
+﻿@model FinalPharmacy.Models.Customer.Customer
+@{
+    Layout = null;
+}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Customer Profile</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    
+@if (Model != null)
+{
+    <div class="container">
+        <h1>Customer Profile</h1>
+        <div class="customer-info">
+            <h2>Name: @Model?.Name</h2>
+            <p>Gender: @Model?.Gender</p>
+            <p>DateOfBirth: @Model?.DateOfBirth</p>
+            <p>PhoneNumber: @Model?.PhoneNumber</p>
+            <p>Address: @Model?.Address</p>
+            <p>BloodType: @Model?.BloodType</p>
+            <p>EmergencyContactNumber: @Model?.EmergencyContactNumber</p>
+            <p>Email: @Model?.Email</p>
+        </div>
+    </div>
+}
+else
+    {
+        <h1>No Customer Profile Found</h1>
+        <p>There is no customer profile associated with the logged-in user.</p>
+        <!-- You can provide additional instructions or options here -->
+    }
+</body>
+</html>
