@@ -1,0 +1,49 @@
+﻿@using System.Collections
+@using FinalPharmacy.Data.Migrations
+@using FinalPharmacy.Models.Admin
+
+@model List<FinalPharmacy.Models.Admin.Inventory>
+<h1>Inventory</h1>
+<div>
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Product Id</th>
+                <th>Product Category</th>
+                <th>Product Name</th>
+                <th>Purchase Date</th>
+                <th>Last Updated</th>
+                <th>Supplier</th>
+                <th>Unit Cost</th>
+                <th>Total Cost</th>
+                <th>Batch Number</th>
+                <th>Capacity</th>
+                <th>Quantity</th>
+                <th>Stock Status</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach(var Inventory in Model)
+            {
+                <tr>
+                    <td>@Inventory.ProductId</td>
+                    <td>@Inventory.ProductCategory</td>
+                    <td>@Inventory.ProductName</td>
+                    <td>@Inventory.PurchaseDate</td>
+                    <td>@Inventory.LastUpdated</td>
+                    <td>@Inventory.Supplier</td>
+                    <td>@Inventory.UnitCost</td>
+                    <td>@Inventory.TotalCost</td>
+                    <td>@Inventory.BatchNumber</td>
+                    <td>@Inventory.Capacity</td>
+                    <td>@Inventory.Quantity</td>
+                    <td>@Inventory.StockStatus</td>
+                    <td>
+                        <a class="btn btn-primary" asp-controller="Inventory" asp-action="EditInventory" asp-route-id="@Inventory.ProductId">Edit</a>
+                    </td>
+
+                </tr>
+            }
+        </tbody>
+    </table>
+</div>

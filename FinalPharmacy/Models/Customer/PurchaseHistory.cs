@@ -6,7 +6,7 @@
 
         // Foreign key to link with Customer
         public int CustomerId { get; set; }
-        public Customer Customer { get; set; }
+        public CustomerData Customer { get; set; }
 
         public int OrderId { get; set; } // Assuming you have a Product model
         public DateTime PurchaseDate { get; set; }

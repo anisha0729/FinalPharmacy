@@ -8,5 +8,9 @@ namespace FinalPharmacy.Controllers
         {
             return View();
         }
+        public IActionResult AdminStaffDashboard()
+        {
+            return View();
+        }
     }
 }

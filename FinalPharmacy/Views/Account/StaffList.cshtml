@@ -1,0 +1,48 @@
+﻿@using System.Collections
+@using FinalPharmacy.Data.Migrations
+@using FinalPharmacy.Models.Admin
+
+@model List<FinalPharmacy.Models.Admin.Staff>
+<h1>Staff</h1>
+<div>
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Staff Id</th>
+                <th>Staff Name</th>
+                <th> Date Of Birth</th>
+                <th>Gender</th>
+                <th>Address</th>
+                <th>Email</th>
+                <th> Phone Number</th>
+                <th>Salary</th>
+                <th>Hire Date</th>
+                <th>User Id</th>
+
+               
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var Staff in Model)
+            {
+                <tr>
+                    <td>@Staff.StaffId</td>
+                    <td>@Staff.Name</td>
+                    <td>@Staff.DateOfBirth</td>
+                    <td>@Staff.Gender</td>
+                    <td>@Staff.Address</td>
+                    <td>@Staff.Email</td>
+                    <td>@Staff.PhoneNumber</td>
+                    <td>@Staff.Salary</td>
+                    <td>@Staff.HireDate</td>
+                    <td>@Staff.Id</td>
+                   
+                    <td>
+                        <a class="btn btn-primary" asp-controller="Account" asp-action="StaffList" asp-route-id="@Staff.StaffId">Edit</a>
+                    </td>
+
+                </tr>
+            }
+        </tbody>
+    </table>
+</div>

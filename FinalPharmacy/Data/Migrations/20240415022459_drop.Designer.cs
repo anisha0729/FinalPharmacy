@@ -4,6 +4,7 @@ using FinalPharmacy.Data;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 #nullable disable
@@ -11,9 +12,11 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace FinalPharmacy.Data.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    partial class ApplicationDbContextModelSnapshot : ModelSnapshot
+    [Migration("20240415022459_drop")]
+    partial class drop
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -64,7 +67,7 @@ namespace FinalPharmacy.Data.Migrations
 
                     b.HasIndex("SupplierId");
 
-                    b.ToTable("Inventory", (string)null);
+                    b.ToTable("Inventory");
                 });
 
             modelBuilder.Entity("FinalPharmacy.Models.Admin.Supplier", b =>
@@ -91,7 +94,7 @@ namespace FinalPharmacy.Data.Migrations
 
                     b.HasKey("SupplierId");
 
-                    b.ToTable("Supplier", (string)null);
+                    b.ToTable("Supplier");
                 });
 
             modelBuilder.Entity("FinalPharmacy.Models.ApplicationUser", b =>
@@ -226,7 +229,7 @@ namespace FinalPharmacy.Data.Migrations
 
                     b.HasIndex("UserId");
 
-                    b.ToTable("Customer", (string)null);
+                    b.ToTable("Customer");
                 });
 
             modelBuilder.Entity("FinalPharmacy.Models.Customer.MedicalHistory", b =>
@@ -249,7 +252,7 @@ namespace FinalPharmacy.Data.Migrations
 
                     b.HasIndex("CustomerId");
 
-                    b.ToTable("MedicalHistory", (string)null);
+                    b.ToTable("MedicalHistory");
                 });
 
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityRole", b =>

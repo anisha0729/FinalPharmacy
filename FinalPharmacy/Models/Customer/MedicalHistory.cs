@@ -6,7 +6,7 @@
 
         // Foreign key to link with Customer
         public Guid CustomerId { get; set; }
-        public Customer Customer { get; set; }
+        public CustomerData Customer { get; set; }
 
         public string Condition { get; set; }
         public DateTime DiagnosisDate { get; set; }

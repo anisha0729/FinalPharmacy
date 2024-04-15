@@ -22,11 +22,14 @@ namespace FinalPharmacy.Areas.Identity.Pages.Account
     {
         private readonly SignInManager<ApplicationUser> _signInManager;
         private readonly ILogger<LoginModel> _logger;
+        private readonly UserManager<ApplicationUser> _userManager;
 
-        public LoginModel(SignInManager<ApplicationUser> signInManager, ILogger<LoginModel> logger)
+
+        public LoginModel(SignInManager<ApplicationUser> signInManager, UserManager<ApplicationUser> userManager, ILogger<LoginModel> logger)
         {
             _signInManager = signInManager;
             _logger = logger;
+            _userManager = userManager;
         }
 
         /// <summary>
@@ -116,9 +119,18 @@ namespace FinalPharmacy.Areas.Identity.Pages.Account
                 if (result.Succeeded)
                 {
                     _logger.LogInformation("User logged in.");
-                    
-                           return RedirectToAction("CustomerDashboard", "Dashboard");
 
+                    var user = await _userManager.FindByEmailAsync(Input.Email);
+
+                    // Check if user is admin or staff and redirect to the same dashboard
+                    if (await _userManager.IsInRoleAsync(user, "Admin") || await _userManager.IsInRoleAsync(user, "Staff"))
+                    {
+                        return RedirectToAction("AdminStaffDashboard", "Dashboard");
+                    }
+                    else
+                    {
+                        return RedirectToAction("CustomerDashboard", "Dashboard");
+                    }
                 }
                 if (result.RequiresTwoFactor)
                 {

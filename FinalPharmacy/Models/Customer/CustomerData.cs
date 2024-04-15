@@ -3,7 +3,7 @@ using System.ComponentModel.DataAnnotations;
 
 namespace FinalPharmacy.Models.Customer
 {
-    public class Customer
+    public class CustomerData
     {
         [Key]
         public Guid CustomerId { get; set; }
